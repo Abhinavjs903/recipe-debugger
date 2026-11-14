@@ -1,4 +1,5 @@
 import { foodoscopeService } from "./foodoscope.service.mjs";
+import { explainMolecules } from "./molecule-interpretation.service.mjs";
 
 function asRecords(value) {
   if (Array.isArray(value)) return value;
@@ -86,6 +87,7 @@ export async function getIngredientIntelligence(name) {
   const pairings = asRecords(pairingsRaw?.topSimilarEntities ?? pairingsRaw).map(normalizePairing);
   const links = asRecords(linksRaw?.content ?? linksRaw).map(normalizeRecipeLink);
   const molecules = asRecords(moleculesRaw);
+  const moleculeInterpretation = explainMolecules(molecules);
 
   return {
     query: name,
@@ -94,6 +96,10 @@ export async function getIngredientIntelligence(name) {
     pairings,
     pairingMetric: "shared-molecule-count",
     molecules,
+    moleculeInsights: moleculeInterpretation.insights,
+    moleculeInterpretationNote: moleculeInterpretation.note,
+    moleculeInterpretationMethod: moleculeInterpretation.method,
+    unclassifiedMoleculeCount: moleculeInterpretation.unclassifiedCount,
     moleculeDataNote: "Provider-returned molecule records are raw chemical associations. They are not filtered to food-safe, aroma-active, or sensory-relevant compounds.",
     recipeConnections: links,
     sources: ["FlavorDB"],
