@@ -17,5 +17,13 @@ export const foodoscopeService = {
   },
   getIngredientFlavorLinks(name, page = 0, size = 10) {
     return client().get("/flavordb/connections/links", { entity_alias_readable: name, page, size });
+  },
+  getIngredientEntities(name, page = 0, size = 5) {
+    return client().get("/flavordb/entities/by-entity-alias-readable", {
+      entity_alias_readable: name, page, size
+    });
+  },
+  getEntityMolecules(entityId) {
+    return client().get(`/flavordb/entities/by-id/${encodeURIComponent(entityId)}/molecules-compact`);
   }
 };
