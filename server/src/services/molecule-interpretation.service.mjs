@@ -62,12 +62,18 @@ function normalizeName(value) {
 export function explainMolecules(molecules = []) {
   const seen = new Set();
   const insights = [];
+  let unclassifiedCount = 0;
 
   for (const molecule of molecules) {
     const name = molecule?.common_name ?? molecule?.commonName ?? molecule?.name;
-    const guide = MOLECULE_GUIDE[normalizeName(name)];
-    if (!guide || seen.has(normalizeName(name))) continue;
-    seen.add(normalizeName(name));
+    const normalized = normalizeName(name);
+    if (!normalized || seen.has(normalized)) continue;
+    seen.add(normalized);
+    const guide = MOLECULE_GUIDE[normalized];
+    if (!guide) {
+      unclassifiedCount += 1;
+      continue;
+    }
     insights.push({
       name,
       pubchemId: molecule.pubchem_id ?? molecule.pubchemId ?? null,
@@ -79,6 +85,6 @@ export function explainMolecules(molecules = []) {
     insights,
     note: "These are cautious, curated explanations of selected compound families and commonly reported aroma descriptors. They are not proof that the compound is present at a sensory-relevant concentration in this ingredient or dish.",
     method: "curated-allowlist",
-    unclassifiedCount: Math.max(0, molecules.length - insights.length)
+    unclassifiedCount
   };
 }
