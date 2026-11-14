@@ -6,9 +6,13 @@
   "scripts": {
     "dev:server": "node --watch server/src/server.mjs",
     "start:server": "node server/src/server.mjs",
-    "test:server": "node --test server/tests/*.test.mjs"
+    "test:server": "node --test server/tests/*.test.mjs",
+    "dev:client": "npm --prefix client run dev -- --host 0.0.0.0",
+    "build:client": "npm --prefix client run build"
   },
-  "engines": { "node": ">=20.19.0" },
+  "engines": {
+    "node": ">=20.19.0"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.6.1",
