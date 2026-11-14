@@ -39,6 +39,33 @@
 
 <Diagram or bullet list: frontend → your backend → FoodoScope gateway. Name the stack.>
 
+## Project structure
+
+```text
+Repo-3/
+├── client/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── features/
+│   │   │   ├── intelligence/
+│   │   │   ├── substitution/
+│   │   │   ├── repair/
+│   │   │   ├── generation/
+│   │   │   └── counterfactual/
+│   │   ├── services/
+│   │   └── utils/
+│   └── package.json
+├── server/
+│   └── foodoscope-proxy.mjs
+├── starter/
+│   └── js/
+├── docs/
+├── postman/
+├── .env
+└── README.md
+```
+
 ## Run it locally
 
 ```bash
