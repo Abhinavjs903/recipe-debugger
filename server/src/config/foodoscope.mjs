@@ -3,7 +3,7 @@ import { env } from "./env.mjs";
 
 let client;
 export function getFoodoscope() {
-  if (!env.FOODOscope_API_KEY && !env.FOODOSCOPE_API_KEY) {
+  if (!env.FOODOSCOPE_API_KEY) {
     throw new Error("FOODOSCOPE_API_KEY is not configured. Add it to your local .env file.");
   }
   client ??= new Foodoscope({
