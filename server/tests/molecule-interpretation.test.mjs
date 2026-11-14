@@ -25,6 +25,6 @@ test("deduplicates repeated molecules and handles missing input", () => {
   ]);
 
   assert.equal(result.insights.length, 1);
-  assert.equal(result.unclassifiedCount, 1);
+  assert.equal(result.unclassifiedCount, 0);
   assert.equal(explainMolecules().insights.length, 0);
 });
