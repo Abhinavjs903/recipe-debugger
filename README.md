@@ -1,88 +1,36 @@
-<!--
-  FORK-IT 2026 · Team repository
-  Replace everything in <angle brackets>. Delete these HTML comments before 6:00 AM, 15 Nov.
-  Judges read this file first. Keep it honest and short.
--->
+# FlavoLens
 
-# <Project name>
+**Understand ingredients. Improve every dish.**
 
-> <One-sentence pitch: who it helps and how.>
+FlavoLens is a mobile-first cooking companion focused on helping home cooks improve dishes they already make. The backend is designed around grounded culinary data and explicit reasoning—not generic recipe generation.
 
-| | |
-|---|---|
-| **Team** | `<team-id>` · <team name> |
-| **Members** | <Name (GitHub @handle)>, <Name (@handle)>, … |
-| **Track / problem statement** | <track> |
-| **FoodoScope APIs used** | ☐ RecipeDB · ☐ FlavorDB · ☐ CocktailDB *(18+ verified teams only)* |
-| **Demo video** | <link (≤ 3 min, unlisted YouTube / Drive)> |
-| **Live demo (optional)** | <link> |
+## Backend setup
 
-## The problem
+Requirements: Node.js 20.19+.
 
-<2–4 sentences. What's broken today, and for whom?>
+1. Install dependencies: `npm install`
+2. Copy `.env.example` to `.env`
+3. Add your Foodoscope key to `FOODOSCOPE_API_KEY` in `.env`
+4. Start the API: `npm run dev:server`
+5. Check `http://localhost:5050/api/v1/health`
 
-## What we built
+Run tests with `npm run test:server`.
 
-<What it does, the main user flow, and screenshots (put images in `docs/images/`).>
+## API endpoints
 
-![screenshot](docs/images/screenshot.png)
+- `GET /api/v1/health`
+- `GET /api/v1/recipes/search?title=paneer`
+- `GET /api/v1/recipes/:id`
+- `GET /api/v1/recipes/:id/instructions`
+- `GET /api/v1/ingredients/pairings?name=mango`
+- `GET /api/v1/ingredients/flavor-links?name=tomato`
 
-## How we use FoodoScope data
+The browser/mobile client talks only to FlavoLens. Foodoscope credentials stay on the server.
 
-<Which endpoints you call and what you do with the results. Judges score this, so be specific.>
+## Mobile / network access
 
-| Endpoint | Why |
-|---|---|
-| `GET /recipe2-api/...` | <purpose> |
+The API binds to `0.0.0.0` so a phone on the same Wi-Fi can reach it using the computer's LAN IP, for example `http://192.168.1.5:5050`. Set `CLIENT_ORIGIN` to the exact frontend origin(s), comma-separated. For access outside your local network, deploy the backend over HTTPS; do not expose a development server directly to the public internet.
 
-## Architecture
+## Data provider constraints
 
-<Diagram or bullet list: frontend → your backend → FoodoScope gateway. Name the stack.>
-
-## Project structure
-
-```text
-Repo-3/
-├── client/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── features/
-│   │   │   ├── intelligence/
-│   │   │   ├── substitution/
-│   │   │   ├── repair/
-│   │   │   ├── generation/
-│   │   │   └── counterfactual/
-│   │   ├── services/
-│   │   └── utils/
-│   └── package.json
-├── server/
-│   └── foodoscope-proxy.mjs
-├── starter/
-│   └── js/
-├── docs/
-├── postman/
-├── .env
-└── README.md
-```
-
-## Run it locally
-
-```bash
-git clone <this repo>
-cp .env.example .env          # paste your API key
-# <install + run commands>
-```
-
-## What's next
-
-<What you'd build with another week.>
-
-## Acknowledgements
-
-Data from the [FoodoScope](https://cosylab.iiitd.edu.in) APIs (RecipeDB, FlavorDB, CocktailDB) by the Complex Systems Lab, IIIT-Delhi.
-Third-party libraries, datasets, and AI tools used: <list them; undisclosed use can be penalised>.
-
----
-
-<sub>Built at Fork-IT 2026 · ESYA'26 · IIIT-Delhi · 14–15 Nov 2026. Starter docs: [`docs/STARTER_GUIDE.md`](docs/STARTER_GUIDE.md)</sub>
+Foodoscope access is subject to the Fork-IT 2026 gateway restrictions documented in `docs/STARTER_GUIDE.md`: campus-network access, rate limits, finite tokens, and key expiry. Responses are cached by the supplied SDK. Do not use CocktailDB in this project.
