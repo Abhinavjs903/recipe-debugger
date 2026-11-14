@@ -35,18 +35,20 @@ function normalizePairing(record) {
   return {
     name: findFirst(record, ["entityName", "entity_alias_readable", "name"]),
     category: findFirst(record, ["category", "category_readable"]),
-    sharedMoleculeCount: findFirst(record, ["similarMolecules", "similar_molecules"])
+    sharedMoleculeCount: findFirst(record, ["similarMolecules", "similar_molecules"]),
+    evidenceType: "shared-molecule-count"
   };
 }
 
 function normalizeRecipeLink(record) {
-  const recipe = record?.recipe ?? record;
+  const connection = record?.recipe ?? record;
   const entity = record?.entity ?? {};
   return {
-    ingredient: findFirst(recipe, ["ingredient", "generic_name", "entity_alias_readable"]),
-    recipeIngredientFrequency: findFirst(recipe, ["frequency"]),
-    flavorDbEntityId: findFirst(recipe, ["flavordb_id"]) ?? findFirst(entity, ["entity_id", "entityId"]),
-    recipeId: findFirst(recipe, ["_id", "Recipe_id", "recipe_id"])
+    ingredient: findFirst(connection, ["ingredient", "generic_name", "entity_alias_readable"]),
+    recipeIngredientFrequency: findFirst(connection, ["frequency"]),
+    flavorDbEntityId: findFirst(connection, ["flavordb_id"]) ?? findFirst(entity, ["entity_id", "entityId"]),
+    recipeId: findFirst(connection, ["Recipe_id", "recipe_id"]),
+    connectionRecordId: findFirst(connection, ["_id"])
   };
 }
 
@@ -90,11 +92,15 @@ export async function getIngredientIntelligence(name) {
     profile: selectedEntity,
     entities,
     pairings,
+    pairingMetric: "shared-molecule-count",
     molecules,
+    moleculeDataNote: "Provider-returned molecule records are raw chemical associations. They are not filtered to food-safe, aroma-active, or sensory-relevant compounds.",
     recipeConnections: links,
     sources: ["FlavorDB"],
     limitations: [
-      "Molecular similarity indicates shared flavour compounds; it does not guarantee that a pairing will taste good in every dish.",
+      "Shared-molecule counts are a similarity signal, not a culinary compatibility score or proof of a desirable pairing.",
+      "Molecule records may include compounds that are not relevant to food aroma or suitability; do not present them as recommendations without additional validation.",
+      "A connection record identifier is not necessarily a RecipeDB recipe identifier.",
       "Missing fields mean the provider did not return that information for this query."
     ],
     ...(Object.keys(errors).length ? { partial: true, errors } : { partial: false })
