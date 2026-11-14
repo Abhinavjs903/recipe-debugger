@@ -49,6 +49,6 @@ test("does not reuse aroma rules for an unsupported goal", () => {
 
 test("preserves quantity as context without implying quantity-based scaling", () => {
   const result = buildDishImprovements(sample);
-  assert.equal(result.recommendations[0].quantityProvided, null);
+  assert.equal(result.recommendations[0].quantityProvided, "4 cloves");
   assert.ok(result.limitations.some((item) => item.includes("not currently used to scale")));
 });
