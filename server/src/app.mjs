@@ -7,6 +7,7 @@ import recipeRoutes from "./routes/recipe.routes.mjs";
 import ingredientRoutes from "./routes/ingredient.routes.mjs";
 import intelligenceRoutes from "./routes/intelligence.routes.mjs";
 import culinaryGuidanceRoutes from "./routes/culinary-guidance.routes.mjs";
+import dishImprovementRoutes from "./routes/dish-improvement.routes.mjs";
 import { errorHandler, notFoundHandler } from "./middleware/error-handler.mjs";
 
 const app = express();
@@ -25,6 +26,7 @@ app.use("/api/v1/recipes", recipeRoutes);
 app.use("/api/v1/ingredients", ingredientRoutes);
 app.use("/api/v1/intelligence", intelligenceRoutes);
 app.use("/api/v1/intelligence", culinaryGuidanceRoutes);
+app.use("/api/v1/intelligence", dishImprovementRoutes);
 app.use(notFoundHandler);
 app.use(errorHandler);
 
