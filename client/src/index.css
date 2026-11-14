@@ -111,3 +111,44 @@ body{background:var(--paper);color:var(--ink)}
 @media(max-width:700px){.hero{padding-top:46px}.hero h1{font-size:62px;letter-spacing:-3px}.hero-image{height:350px;box-shadow:10px 10px 0 #35252f14}.floating-card{left:-18px}.manifesto{background:var(--plum)}.detail-hero{background:var(--plum)}}
 @media(hover:none){.pointer-aura{display:none}}
 @media(prefers-reduced-motion:reduce){.page-transition{animation:none}.hero-image>img,.recipe-photo img,.module-card,.recipe-card,.primary,.button-light{transition:none}}
+
+
+/* 12-SECTION PALETTE SYSTEM — each route owns one signature colour */
+.app-shell{--pointer-glow:rgba(251,161,126,.16)}
+.pointer-aura{background:radial-gradient(430px circle at var(--pointer-x,50%) var(--pointer-y,20%),var(--pointer-glow),transparent 70%)}
+.app-shell.palette-home{--paprika:#FBA17E;--accent:#FBA17E;--citrus:#F7D794;--plum:#35252f;--plum-deep:#211922;--pointer-glow:rgba(251,161,126,.19)}
+.app-shell.palette-explore{--paprika:#FF9A00;--accent:#FF9A00;--citrus:#F7D794;--plum:#633b12;--plum-deep:#38230d;--pointer-glow:rgba(255,154,0,.18)}
+.app-shell.palette-recipe-details{--paprika:#D5A94E;--accent:#D5A94E;--citrus:#F7D794;--plum:#554321;--plum-deep:#302717;--pointer-glow:rgba(247,215,148,.22)}
+.app-shell.palette-intelligence{--paprika:#421454;--accent:#421454;--citrus:#FF5B42;--plum:#421454;--plum-deep:#260b32;--pointer-glow:rgba(66,20,84,.17)}
+.app-shell.palette-substitution{--paprika:#FA699E;--accent:#FA699E;--citrus:#FF9FC7;--plum:#71304c;--plum-deep:#3b1b2b;--pointer-glow:rgba(250,105,158,.19)}
+.app-shell.palette-rescue{--paprika:#EE6200;--accent:#EE6200;--citrus:#FBA17E;--plum:#71320f;--plum-deep:#3c1b09;--pointer-glow:rgba(238,98,0,.18)}
+.app-shell.palette-nutrition{--paprika:#259e62;--accent:#4ADD82;--citrus:#b9f3ce;--plum:#185a3a;--plum-deep:#103b28;--pointer-glow:rgba(74,221,130,.2)}
+.app-shell.palette-generate{--paprika:#FA699E;--accent:#FA699E;--citrus:#FF9FC7;--plum:#71304c;--plum-deep:#3b1b2b;--pointer-glow:rgba(250,105,158,.19)}
+.app-shell.palette-discover{--paprika:#802C62;--accent:#802C62;--citrus:#FA699E;--plum:#501b3d;--plum-deep:#2c1023;--pointer-glow:rgba(128,44,98,.2)}
+.app-shell.palette-compare{--paprika:#FF5B42;--accent:#FF5B42;--citrus:#FFD749;--plum:#702b25;--plum-deep:#351714;--pointer-glow:rgba(255,91,66,.19)}
+.app-shell.palette-taste-lab{--paprika:#d2a900;--accent:#FFD749;--citrus:#fff0a6;--plum:#5b4810;--plum-deep:#30270c;--pointer-glow:rgba(255,215,73,.2)}
+.app-shell.palette-profile{--paprika:#d96d98;--accent:#FFE7F0;--citrus:#FF9FC7;--plum:#71304c;--plum-deep:#3b1b2b;--pointer-glow:rgba(255,159,199,.2)}
+.app-shell.palette-about{--paprika:#421454;--accent:#421454;--citrus:#FFD749;--plum:#421454;--plum-deep:#260b32;--pointer-glow:rgba(66,20,84,.17)}
+
+/* Keep the palette present but restrained: accents, surfaces and active states */
+.app-shell .header nav a.active{color:var(--paprika);border-color:var(--paprika)}
+.app-shell .brand-mark{background:var(--paprika);color:var(--plum-deep)}
+.app-shell .header-cta{border-color:color-mix(in srgb,var(--paprika) 65%,transparent)}
+.app-shell .eyebrow i{background:var(--citrus)}
+.app-shell .primary,.app-shell .button-light,.app-shell .profile-fab{background:var(--paprika);color:var(--plum-deep)}
+.app-shell .primary:hover,.app-shell .button-light:hover,.app-shell .profile-fab:hover{background:var(--citrus)}
+.app-shell .module-card:hover{background:var(--plum);border-color:var(--plum)}
+.app-shell .module-card:hover:before{border-color:color-mix(in srgb,var(--paprika) 70%,transparent)}
+.app-shell .module-card>span,.app-shell .module-card>small,.app-shell .module-card>b{color:var(--paprika)}
+.app-shell .module-card:hover>b{color:var(--citrus)}
+.app-shell .recipe-photo>span{background:var(--paprika);color:var(--plum-deep)}
+.app-shell .field input:focus,.app-shell .field select:focus,.app-shell .field textarea:focus,.app-shell .filters input:focus,.app-shell .filters select:focus{border-color:var(--paprika);box-shadow:0 0 0 3px color-mix(in srgb,var(--paprika) 18%,transparent)}
+.app-shell .notice{border-left-color:var(--paprika)}
+.app-shell .choice.selected{background:var(--plum);border-color:var(--plum);color:#fff8ef}
+.app-shell .detail-hero{background:var(--plum)}
+.app-shell .manifesto{background:var(--plum)}
+.app-shell .closing{background:var(--plum-deep)}
+.app-shell .manifesto h2 em,.app-shell .closing h2 em,.app-shell .hero h1 em,.app-shell .tool-intro h1 em,.app-shell .page-head h1 em{color:var(--paprika)}
+.app-shell .floating-card{background:var(--plum);color:var(--cream)}
+.app-shell .footer .brand-mark{background:var(--plum);color:var(--cream)}
+@media(prefers-reduced-motion:reduce){.pointer-aura{display:none}}
