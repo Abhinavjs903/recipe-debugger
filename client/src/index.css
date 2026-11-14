@@ -152,3 +152,132 @@ body{background:var(--paper);color:var(--ink)}
 .app-shell .floating-card{background:var(--plum);color:var(--cream)}
 .app-shell .footer .brand-mark{background:var(--plum);color:var(--cream)}
 @media(prefers-reduced-motion:reduce){.pointer-aura{display:none}}
+
+
+/* NIGHT KITCHEN REDESIGN — cinematic, legible, tactile */
+:root{--night:#171317;--night-2:#211a20;--night-card:#292129;--night-line:#51404a;--night-text:#f5eee4;--night-muted:#c0b2ad}
+html,body,#root{background:var(--night);color:var(--night-text)}
+body{font-size:16px}
+.app-shell{background:var(--night);color:var(--night-text);min-height:100vh}
+.header{background:rgba(23,19,23,.82);border-bottom:1px solid #ffffff18;backdrop-filter:blur(22px);padding-inline:5%;height:88px}
+.brand{font-size:21px;color:#fff8ef}
+.brand small{color:#b8a9a3;font-size:9px}
+.brand-mark{width:46px;height:46px}
+.header nav a,.header-cta{font-size:13px;color:#e6d9d0}
+.header nav a.active{color:var(--paprika)}
+.header-cta{border:1px solid var(--paprika);padding:12px 17px}
+.footer{background:#100d11;border-top:1px solid #ffffff1a;color:#eee2d8;padding-block:30px}
+.footer>span,.footer>a:last-child{color:#b7a9a3;font-size:10px}
+.hero{padding:90px 6% 110px;gap:5%;min-height:690px;align-items:center}
+.hero-copy{max-width:650px}
+.hero h1{font-size:clamp(76px,9vw,140px);line-height:.88;letter-spacing:-6px;color:#fff8f0}
+.hero-copy>p{font-size:19px;line-height:1.8;color:#d2c4bd;max-width:530px}
+.hero-foot{font-size:11px;letter-spacing:1.4px}
+.hero-image{height:min(70vh,660px);border-radius:3px;box-shadow:20px 20px 0 #ef784c22}
+.image-label b{font-size:32px}
+.image-label small{font-size:11px}
+.manifesto{background:#241b25;color:#fff5eb;padding:85px 8%;min-height:320px}
+.manifesto h2,.section h2,.section-top h2,.feature-band h2{font-size:clamp(42px,5.1vw,72px)}
+.manifesto>p,.feature-band p{font-size:17px;line-height:1.85;color:#d2c4bd}
+.section,.page{color:#f5eee4}
+.section-top p,.page-head>p{font-size:17px;line-height:1.8;color:#c6b9b2}
+.eyebrow{font-size:11px;letter-spacing:1.8px}
+.module-card{background:#2a222a;border-color:#ffffff22;color:#fff4eb;min-height:290px;padding:27px}
+.module-card>small{font-size:10px}
+.module-card h3{font-size:28px}
+.module-card p{font-size:14px;line-height:1.8;color:#c6b9b2}
+.module-card>b{font-size:12px}
+.module-card:hover{background:#3a2a39}
+.recipe-card{background:#2a222a;border-color:#ffffff22;color:#fff4eb}
+.recipe-photo{height:260px}
+.recipe-info{padding:20px}
+.recipe-info>small{font-size:11px}
+.recipe-info h3{font-size:27px}
+.tags span{font-size:10px;color:#dfd0c8;border-color:#ffffff35}
+.recipe-info .under-link{font-size:12px;color:#f5b28f}
+.feature-band{background:#292029;color:#fff4eb;min-height:490px}
+.feature-band>div{padding:70px 10%}
+.feature-band h2{font-size:clamp(42px,5vw,70px)}
+.feature-band p{color:#d5c7c0}
+.closing{padding:100px 8%;min-height:460px}
+.closing h2{font-size:clamp(64px,8vw,112px)}
+.closing p{font-size:17px;color:#d4c6be}
+.page-head{padding:40px 0 55px}
+.page-head h1{font-size:clamp(64px,8vw,108px);line-height:.96;color:#fff6ed}
+.page-head>p{max-width:780px}
+.detail-hero{padding:75px 6%;background:#2a202b}
+.detail-hero h1{font-size:clamp(58px,7vw,96px)}
+.detail-hero p{font-size:17px}
+.detail-hero>img{height:520px}
+.detail-columns h2{font-size:48px}
+.detail-columns p{font-size:16px;line-height:1.9;color:#c7b9b2}
+.ingredient-row{font-size:16px;border-color:#ffffff24}
+.tool-layout{padding:100px 6% 50px;gap:8%;max-width:1500px}
+.tool-intro h1{font-size:clamp(62px,7vw,100px);line-height:.95;color:#fff5ec}
+.tool-intro>p{font-size:17px;line-height:1.9;color:#d1c3bc}
+.tool-note{background:#2a222a;border:1px solid #ffffff18;padding:20px}
+.tool-note span{font-size:13px;color:#d0c2bb}
+.tool-form{background:#2a222a;border:1px solid #ffffff25;padding:38px;gap:22px;box-shadow:0 30px 80px #0005}
+.field>span{font-size:11px;letter-spacing:1px}
+.field input,.field select,.field textarea,.filters input,.filters select{background:#171317;border:1px solid #62515a;color:#fff4eb;padding:16px 17px;font-size:15px;border-radius:2px}
+.field input::placeholder,.field textarea::placeholder,.filters input::placeholder{color:#9f9190}
+.tool-form .primary,.primary,.button-light{font-size:14px;padding:17px 23px}
+.result-panel{background:#292129;border-color:#ffffff25;color:#fff5eb;padding:38px 5.5%}
+.result-panel h2{font-size:40px}
+.result-panel>p,.result-grid p,.candidate-grid p,.recovery-step p{font-size:15px;line-height:1.85;color:#d1c3bc}
+.result-grid>div,.candidate-grid article,.compare-grid>div{background:#191519;border:1px solid #ffffff18}
+.result-grid small,.candidate-grid small,.compare-grid small{font-size:10px}
+.notice{background:#342731;color:#e0d0c7;font-size:14px;padding:20px}
+.button-outline{font-size:13px;padding:15px}
+.filters{gap:14px}
+.filters input,.filters select{font-size:14px}
+.empty{background:#2a222a;color:#eee2d8;font-size:16px}
+.profile-grid>div{background:#292129;color:#f7eee6;border:1px solid #ffffff20}
+.profile-grid h2{font-size:36px}
+.profile-grid p{font-size:15px;color:#cbbdb6}
+.profile-fab{font-size:12px;padding:15px 19px}
+
+/* The sandwich navigator: a real menu with layers, not an unexplained floating pill */
+.bite-nav{position:fixed;z-index:40;right:24px;top:50%;transform:translateY(-50%);width:205px;padding:13px 12px 12px;background:rgba(29,23,30,.92);border:1px solid #ffffff2b;box-shadow:0 20px 70px #0008;backdrop-filter:blur(20px);border-radius:5px;display:flex;flex-direction:column;align-items:center;gap:11px}
+.burger-stack{height:94px;width:160px;display:flex;flex-direction:column;align-items:stretch;justify-content:center;gap:3px;position:relative;overflow:hidden;transform-origin:center top;transition:height .55s cubic-bezier(.2,.8,.2,1),transform .55s}
+.bun{display:block;height:17px;background:linear-gradient(180deg,#f5c477,#bd7138);border:1px solid #f7d89a;border-radius:24px 24px 8px 8px;box-shadow:inset 0 -3px 0 #8d4a27}
+.bun-bottom{height:13px;border-radius:5px 5px 16px 16px}
+.burger-layer{height:9px;display:block;border-radius:8px;transition:height .45s,opacity .35s,transform .45s}
+.lettuce{background:#8ebc55;clip-path:polygon(0 35%,12% 0,24% 65%,37% 5%,51% 70%,65% 0,78% 65%,90% 10%,100% 45%,100% 100%,0 100%)}
+.cheese{background:#f4c642;clip-path:polygon(0 0,100% 0,90% 100%,70% 55%,50% 100%,25% 55%,10% 100%)}
+.patty{background:#6e3426;height:13px;box-shadow:inset 0 3px #9b5437}
+.tomato{background:#d64d38}
+.bite-cut{position:absolute;right:-20px;top:0;width:48px;height:48px;border-radius:50%;background:var(--night);opacity:0;transition:opacity .3s}
+.bite-nav.bite-1 .tomato,.bite-nav.bite-2 .tomato,.bite-nav.bite-2 .cheese,.bite-nav.bite-3 .tomato,.bite-nav.bite-3 .cheese,.bite-nav.bite-3 .lettuce,.bite-nav.bite-4 .tomato,.bite-nav.bite-4 .cheese,.bite-nav.bite-4 .lettuce,.bite-nav.bite-4 .patty,.bite-nav.bite-5 .burger-layer{height:0;opacity:.08;transform:translateY(-10px)}
+.bite-nav.bite-2 .bun-bottom,.bite-nav.bite-3 .bun-bottom,.bite-nav.bite-4 .bun-bottom,.bite-nav.bite-5 .bun-bottom{height:7px}
+.bite-nav.bite-3 .bite-cut,.bite-nav.bite-4 .bite-cut,.bite-nav.bite-5 .bite-cut{opacity:.9}
+.bite-links{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:5px}
+.bite-links a{display:flex;align-items:center;gap:7px;text-decoration:none;padding:8px 7px;border:1px solid #ffffff16;color:#e9ddd5;font-size:10px;letter-spacing:.7px;transition:background .25s,border-color .25s,transform .25s}
+.bite-links a span{font:9px 'DM Mono',monospace;color:var(--paprika)}
+.bite-links a:hover,.bite-links a.current{background:#49303d;border-color:var(--paprika);transform:translateY(-2px)}
+.bite-caption{font:8px 'DM Mono',monospace;color:#a99a93;letter-spacing:1px}
+.fire-rescue{min-height:540px;padding:85px 8%;display:grid;grid-template-columns:1fr 1fr;gap:7%;align-items:center;background:radial-gradient(circle at 72% 52%,#6e2a1f 0,#2b1c22 32%,#1d171e 72%);overflow:hidden;position:relative}
+.fire-copy{position:relative;z-index:2}
+.fire-copy h2{font:700 clamp(48px,6vw,82px)/.98 'Playfair Display';letter-spacing:-2px;margin:20px 0;color:#fff1e7}
+.fire-copy h2 em{color:#ff784b}
+.fire-copy p{font-size:17px;line-height:1.85;color:#d5c3b9;max-width:500px;margin-bottom:28px}
+.fire-stage{height:370px;position:relative;display:grid;place-items:end center;isolation:isolate}
+.fire-glow{position:absolute;bottom:5px;width:330px;height:140px;border-radius:50%;background:#ff5a1f55;filter:blur(40px);animation:heat-pulse 1.5s infinite alternate}
+.flame{position:absolute;bottom:70px;width:76px;height:170px;background:linear-gradient(0deg,#ff3d17 0%,#ff9a22 54%,#ffe78b 100%);border-radius:70% 20% 60% 45%;filter:drop-shadow(0 0 24px #ff5b1c);transform-origin:bottom;animation:flame-dance .75s ease-in-out infinite alternate;z-index:1}
+.flame-one{left:28%;height:150px;transform:rotate(-12deg)}
+.flame-two{left:47%;height:220px;width:90px;animation-delay:.2s}
+.flame-three{right:24%;height:175px;transform:rotate(13deg);animation-delay:.4s}
+.pan{position:absolute;z-index:3;bottom:78px;width:260px;height:80px;border-radius:0 0 100px 100px;background:linear-gradient(180deg,#7b7370,#211d20 50%,#09090a);border:5px solid #a89b91;box-shadow:0 15px 20px #0008;transform:rotate(-5deg)}
+.pan:before{content:"";position:absolute;right:-125px;top:13px;width:145px;height:17px;border-radius:20px;background:linear-gradient(#71645e,#272023);transform:rotate(4deg);z-index:-1}
+.burnt-food{position:absolute;top:-12px;left:25px;width:200px;height:28px;border-radius:50%;background:radial-gradient(ellipse,#171113 0 28%,#55301e 48%,#ad5a26 70%,transparent 72%);animation:burn-sizzle .8s infinite alternate}
+.burnt-food i{position:absolute;width:34px;height:13px;border-radius:50%;background:#151012;top:5px;left:32px}
+.burnt-food i:nth-child(2){left:94px;top:0}.burnt-food i:nth-child(3){left:145px;top:8px}
+.burnt-food b{position:absolute;right:5px;top:-40px;color:#ffb14c;font-size:30px;text-shadow:0 0 15px #ff5b1c}
+.pan-handle{position:absolute;z-index:2;bottom:117px;right:4%;width:180px;height:16px;border-radius:15px;background:#5a4a46;transform:rotate(-5deg)}
+.heat-label{position:absolute;bottom:20px;font:10px 'DM Mono',monospace;color:#ffb27c;letter-spacing:2px}
+@keyframes flame-dance{from{scale:.88 1;filter:drop-shadow(0 0 12px #ff5b1c)}to{scale:1.08 1.12;filter:drop-shadow(0 0 32px #ffb11c)}}
+@keyframes heat-pulse{from{opacity:.45;transform:scale(.8)}to{opacity:1;transform:scale(1.15)}}
+@keyframes burn-sizzle{from{filter:brightness(.75)}to{filter:brightness(1.35)}}
+@media(max-width:1050px){.bite-nav{right:12px;width:170px}.bite-links a{font-size:9px}.hero{padding-inline:4%}.hero h1{font-size:clamp(66px,8vw,100px)}}
+@media(max-width:760px){.header{height:72px;padding-inline:18px}.header nav{display:none}.header-cta{font-size:10px;padding:9px}.hero{padding:58px 20px 70px;min-height:auto;grid-template-columns:1fr}.hero h1{font-size:clamp(62px,15vw,88px);letter-spacing:-3px}.hero-copy>p{font-size:16px}.hero-image{height:360px;margin:0;box-shadow:8px 8px 0 #ef784c22}.manifesto{padding:55px 22px}.module-grid{grid-template-columns:1fr 1fr}.module-card{min-height:240px;padding:18px}.module-card h3{font-size:22px}.module-card p{font-size:12px}.recipe-grid{grid-template-columns:1fr 1fr}.recipe-photo{height:170px}.recipe-info h3{font-size:20px}.section,.page{padding:55px 18px}.feature-band>div{padding:40px 22px}.tool-layout{padding:60px 18px 30px;grid-template-columns:1fr}.tool-intro{position:static}.tool-intro h1{font-size:58px}.tool-form{padding:22px;grid-template-columns:1fr}.field,.field.wide{grid-column:1}.result-panel{margin:15px;padding:24px 18px}.detail-hero{grid-template-columns:1fr;padding:28px 18px}.detail-hero>img{height:290px}.detail-columns{grid-template-columns:1fr;padding:35px 18px}.page-head h1{font-size:58px}.fire-rescue{grid-template-columns:1fr;padding:60px 22px;gap:15px}.fire-stage{height:300px}.bite-nav{top:auto;bottom:12px;right:12px;transform:none;width:calc(100% - 24px);padding:8px 10px;display:grid;grid-template-columns:74px 1fr;gap:8px}.burger-stack{width:70px;height:66px}.bite-links{grid-template-columns:repeat(3,1fr)}.bite-links a{justify-content:center;padding:7px 3px;font-size:8px}.bite-links a span{display:none}.bite-caption{display:none}.footer{padding-bottom:100px}}
+@media(prefers-reduced-motion:reduce){.flame,.fire-glow,.burnt-food{animation:none}.burger-stack,.burger-layer{transition:none}}
