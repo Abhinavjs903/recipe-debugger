@@ -33,4 +33,57 @@ The API binds to `0.0.0.0` so a phone on the same Wi-Fi can reach it using the c
 
 ## Data provider constraints
 
+<<<<<<< Updated upstream
 Foodoscope access is subject to the Fork-IT 2026 gateway restrictions documented in `docs/STARTER_GUIDE.md`: campus-network access, rate limits, finite tokens, and key expiry. Responses are cached by the supplied SDK. Do not use CocktailDB in this project.
+=======
+<Diagram or bullet list: frontend → your backend → FoodoScope gateway. Name the stack.>
+
+## Project structure
+
+```text
+Repo-3/
+├── client/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── features/
+│   │   │   ├── intelligence/
+│   │   │   ├── substitution/
+│   │   │   ├── repair/
+│   │   │   ├── generation/
+│   │   │   └── counterfactual/
+│   │   ├── services/
+│   │   └── utils/
+│   └── package.json
+├── server/
+│   └── foodoscope-proxy.mjs
+├── starter/
+│   └── js/
+├── docs/
+├── postman/
+├── .env
+└── README.md
+```
+
+## Run it locally
+
+```bash
+git clone <this repo>
+cp .env.example .env          # paste your API key
+# <install + run commands>
+``
+`
+
+## What's next
+
+<What you'd build with another week.>
+
+## Acknowledgements
+
+Data from the [FoodoScope](https://cosylab.iiitd.edu.in) APIs (RecipeDB, FlavorDB, CocktailDB) by the Complex Systems Lab, IIIT-Delhi.
+Third-party libraries, datasets, and AI tools used: <list them; undisclosed use can be penalised>.
+
+---
+
+<sub>Built at Fork-IT 2026 · ESYA'26 · IIIT-Delhi · 14–15 Nov 2026. Starter docs: [`docs/STARTER_GUIDE.md`](docs/STARTER_GUIDE.md)</sub>
+>>>>>>> Stashed changes
